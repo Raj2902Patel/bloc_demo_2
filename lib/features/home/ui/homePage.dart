@@ -39,12 +39,12 @@ class _HomePageState extends State<HomePage> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const WishlistPage(),
+              builder: (context) => const WishListPage(),
             ),
           );
         } else if (state is HomeProductItemCartedActionState) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
+            const SnackBar(
               content: Center(
                 child: Text("The Item Has Been Added To Your Cart!"),
               ),
@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
           );
         } else if (state is HomeProductItemWishListedActionState) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
+            const SnackBar(
               content: Center(
                 child: Text("The Item Has Been Added To Wish List!"),
               ),
@@ -72,6 +72,7 @@ class _HomePageState extends State<HomePage> {
             final successState = state as HomeLoadedSuccessState;
             return Scaffold(
               appBar: AppBar(
+                centerTitle: false,
                 toolbarHeight: 65,
                 backgroundColor: Colors.teal.withOpacity(0.3),
                 title: const Padding(
@@ -94,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                           onPressed: () {
                             homeBloc.add(HomeCartButtonNavigateEvent());
                           },
-                          icon: const Icon(Icons.shopping_cart),
+                          icon: const Icon(Icons.shopping_cart_outlined),
                         )
                       ],
                     ),

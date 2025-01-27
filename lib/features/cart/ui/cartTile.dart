@@ -11,8 +11,8 @@ class CartTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10.0),
-      padding: EdgeInsets.all(10.0),
+      margin: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.0),
         border: Border.all(color: Colors.black),
@@ -31,16 +31,16 @@ class CartTile extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Text(
             productDataModel.name,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 20.0,
               fontWeight: FontWeight.w600,
             ),
           ),
           Text(productDataModel.description),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Row(
@@ -48,17 +48,13 @@ class CartTile extends StatelessWidget {
             children: [
               Text(
                 "\$ ${productDataModel.price.toString()}",
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16.0,
                   fontWeight: FontWeight.w600,
                 ),
               ),
               Row(
                 children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.favorite_border),
-                  ),
                   IconButton(
                     onPressed: () {
                       cartBloc.add(CartRemoveFromCartEvent(
